@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./Css/years.css">
+	<title>Years</title>
+
+</head>
+<body>
+    <div class="settings">
+		<div class="yearselect">
+			<input type="number" id="year" oninput="setYear()">
+		</div>
+		<div class="dayselect">
+			<select name="firstdayoftheweek" id="firstdayoftheweek"></select>
+		</div>
+	</div>
+	<div class="yeartitle">
+		<span class="button" onclick="setYear(-1)"><i class="fa-solid fa-angles-left"></i></span>
+		<span id="yeartitle"></span>
+		<span class="button" onclick="setYear(+1)"><i class="fa-solid fa-angles-right"></i></span>
+	</div>
+	<div class="calendar"></div>
+    <script src="./js/years.js">
+	</script>
+</body>

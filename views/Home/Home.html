@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sider Menu Bar CSS</title>
+    <link rel="stylesheet" href="./Css/Home.css">
+    <link rel="stylesheet" href="./Css/main.css">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./calendar-c2cc910f572f20d00f4d8860634dbc3cea66bf17/calendar-c2cc910f572f20d00f4d8860634dbc3cea66bf17/style.css">
+
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <header>
+
+        <div id="backgroundHeader">
+            <h1>G8</h1>
+            <i id="addButton" class="fas fa-plus" style="
+                padding-right: 50px;
+                color: white;
+                float: right;
+                margin-top: -20px;
+                font-size: 1.3rem;
+                "></i></a>
+            <input type="checkbox" id="check">
+            <label for="check">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+    
+            <div class="sidebar">
+            <header>MENU</header>
+            <ul>
+                <li><a href="#Day"><i class="fas fa-calendar-day"></i>Day</a></li>
+                <li><a href="#"><i class="fas fa-calendar-week"></i>Week</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i>Month</a></li>
+                <li><a href="#"><i class="far fa-calendar-alt"></i>Year</a></li>
+                <li><a href="#"><i class="fas fa-sun"></i>Sun</a></li>
+                <li><a href="#"><i class="fas fa-moon"></i>Moon</a></li>
+                <li><a href="#"><i class="fas fa-print"></i>Download</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>User</a></li>
+            </ul>
+            </div>
+        </div>
+    </header>
+
+        <!-- day -->
+        <div id="Day">
+
+            <section id="calendar">
+                <div class="weekControls">
+                    <i id="prevWeekBtn" class="fas fa-angle-double-left"></i>
+                    <i id="nextWeekBtn" class="fas fa-angle-double-right"></i>
+                </div>    
+                <div class="dayTime"> 
+                </div>
+                <div data-name="Monday" data-dayIndex = "0" class="day">           
+                </div>
+            </section>
+        </div>
+        <section id="Week calendar" style="display: none;">
+            
+            <!-- week -->
+            <div class="weekControls">
+                <i id="prevWeekBtn" class="fas fa-angle-double-left"></i>
+                
+                <i id="nextWeekBtn" class="fas fa-angle-double-right"></i>
+    
+            </div>
+            <div class="dayTime">            
+            </div>
+           
+            <div data-name="Monday" data-dayIndex = "0" class="day">           
+            </div>
+            <div data-name="Tuesday" data-dayIndex = "1" class="day">           
+            </div>
+            <div data-name="Wednesday" data-dayIndex = "2" class="day">           
+            </div>
+            <div data-name="Thursday" data-dayIndex = "3" class="day">            
+            </div>
+            <div data-name="Friday" data-dayIndex = "4" class="day">           
+            </div>
+            <div data-name="Saturday" data-dayIndex = "5" class="day">            
+            </div>
+            <div data-name="Sunday" data-dayIndex = "6" class="day">           
+            </div>
+            <!-- Years -->
+        </section>
+    
+        <form id="eventModal">
+            <h2 id="modalTitle">
+            </h2>
+            <label class="descriptor" for="title">Title</label>
+            <div>
+                <input required type="text" id="eventTitle" name="title" class="shortInput"></input>
+            </div>
+            <label class="descriptor" for="date">Date</label>
+            <div>
+                <input required type="date" id="eventDate" name="date" class="shortInput"></input>
+            </div>
+            <label class="descriptor" for="time">Time</label>
+            <div>
+                <input required type="time" id="eventStart" name="time" class="shortInput"></input>
+                ‒<input required type="time" id="eventEnd" name="time" class="shortInput"></input>
+            </div>
+            
+            <label for="description">
+                Description
+            </label>
+            <div>
+                <textarea id="eventDescription" name="description">
+                </textarea>
+            </div>        
+            <label for="color">
+                Color
+            </label>
+            <div id="colors">
+                <input type="button" name="color" value="" class="color color-red" data-color = "red"></input>
+                <input type="button" name="color" value="" class="color color-blue" data-color = "blue"></input>
+                <input type="button" name="color" value="" class="color color-green" data-color = "green"></input>
+                <input type="button" name="color" value="" class="color color-orange" data-color = "orange"></input>
+            </div>      
+            <div id="eventControls">
+                <input type="submit" value="Submit" class="button" id="submitButton">
+                <input type="button" value="Cancel" class="button" id="cancelButton">
+                <input type="button" value="Copy" class="button" id="copyButton">
+                <input type="button" value="Delete" class="button" id="deleteButton">
+            </div>
+            
+            <div id="errors">    
+            </div>
+            
+        </form>
+    </div>
+    <script src="./calendar-c2cc910f572f20d00f4d8860634dbc3cea66bf17/calendar-c2cc910f572f20d00f4d8860634dbc3cea66bf17/Calendar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./calendar-c2cc910f572f20d00f4d8860634dbc3cea66bf17/calendar-c2cc910f572f20d00f4d8860634dbc3cea66bf17/main.js" type="module"></script>
+  </body>
+</html>

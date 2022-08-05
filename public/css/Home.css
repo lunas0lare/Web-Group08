@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.sidebar {
+  position: fixed;
+  top: 3px;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background:#05393d;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #05393d;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  background: #042331;
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn{
+  left: 40px;
+  top: 15px;
+  font-size: 20px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 17px;
+  font-size: 30px;
+  color: #05393d;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0px;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+  left: 195px;
+}
+
+#check:checked ~ section #calendar{
+  padding-left: 250px !important;
+  padding-right: 10px;
+}
+ 
+
+
+#backgroundHeader {
+    background-color: #05393d;
+    height: 71px;
+}
+
+#backgroundHeader h1 {
+    color: white;
+    text-align: center;
+    padding-top: 1%;
+}
+#backgroundHeader h1> i{
+  padding-right: 50px;
+  color: white;
+  float: right;
+  margin-top: -20px;
+  font-size: 1.3rem;
+}
+.weekControls i{
+  padding: 3px;
+}

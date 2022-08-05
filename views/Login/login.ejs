@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./asset/LOGIN/login.css">
+	<link rel="stylesheet" href="./asset/font/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css">
+	<link rel="stylesheet" href="">
+	<title>LOGIN</title>
+
+</head>
+<body>
+	<div class="signin-singup-wrap right-panel-active">
+		<!--Sign up-->
+		<!-- Sign in -->
+		<div class="container_form singin-content">
+			<form action = "main.html"  class="form" id = "form2">
+				<h2 class="title">Sign in</h2>
+				<input type="text" class="input" placeholder = "Username"> 
+				<input type="text" class="input" placeholder = "Password"  >
+				<a href="forgot-password.html" class="link">Forgot your password?</a>
+				<input type="submit" class="btn" value="Sign in">
+			</form>
+		</div>
+		<div class="containeX	r_form singup-content">
+			<form action = "#" method="post" class="form" id = "form1">
+				<h2 class="title">Sign up</h2>
+				<input type="Email" class="input" name="Email" placeholder = "Email" oninvalid="this.setCustomValidity('ERROR_TEXT')" oninput="this.setCustomValidity('')" >
+				<input type="text" class="input" placeholder = "Username" name = "Username"> 
+				<input type="text" class="input" placeholder = "Password" name = "Password">
+				<input type="submit" class="btn" value="Sign up">
+			
+				<div class= "sign_in_fb_gg">
+					<div class=" sign_in_fb">
+						<i class="fa-brands fa-facebook-f"></i>
+						<a href="#" class="none_">Facebook</a>
+						
+					</div>
+					<div class="sign_in_gg">
+						<i class="fa-brands fa-google"></i>
+						<a href="#" class="none_">Google Mail</a> 
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<!--overlay-->
+		<div class="container__overlay">
+			<div class="overlay">
+				<div class="overlay__panel overlay--right">
+					<button class="btn" id="SignUp">Sign Up</button>
+				</div>
+				<div class="overlay__panel overlay--left">
+					<button class="btn" id="SignIn">Sign In</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script>
+		const signInBtn = document.getElementById("SignIn");
+const signUpBtn = document.getElementById("SignUp");
+const fistForm = document.getElementById("form1");
+const secondForm = document.getElementById("form2");
+const container = document.querySelector(".signin-singup-wrap");
+
+signInBtn.addEventListener("click", () => {
+	container.classList.remove("right-panel-active");
+});
+
+signUpBtn.addEventListener("click", () => {
+	container.classList.add("right-panel-active");
+});
+	
+	</script>
+</body>
+	
+</html>
+
