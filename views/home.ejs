@@ -1,0 +1,194 @@
+<html>
+    <head>
+        
+    <script src="../views/Home/datasource.js" type="text/javascript"></script>
+    <script src="../views/Home/ej2.min.js" type="text/javascript"></script>
+        <!-- <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="css/material.css">
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/home.css">
+
+        <style>
+                body{
+                    touch-action:none;
+                }
+            </style></head><body><div class="stackblitz-container bootstrap"><div class="col-lg-12 control-section">
+        <div class="content-wrapper">
+            <div class="schedule-overview">
+                <div class="overview-header">
+                    <div class="overview-titlebar">
+                        <div class="left-panel">
+                            <div class="schedule-overview-title" style="border: 1px solid transparent;">
+                                G8
+                            </div>
+                        </div>
+                        <div class="center-panel">
+                            <!-- <div class="control-panel calendar-export">
+                                <button id="printBtn">Print</button>
+                            </div>
+                            <div class="control-panel">
+                                <input type="file" id="icalendar" name="iCalendar">
+                            </div>
+                            <div class="control-panel calendar-export">
+                                <button id="exporting">Export</button>
+                            </div> -->
+                        </div>
+                        <div class="right-panel">
+                            <div class="control-panel calendar-export">
+
+                                <button id="timeBtn">Time</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    
+                    <div class="overview-toolbar">
+                        <div style="height: 70px;width: calc(100% - 90px);">
+                            <!-- <div id="toolbar_options"></div> -->
+                            <div id="toolbar_options" class="e-control e-toolbar e-lib e-keyboard" role="toolbar" aria-disabled="false"
+                                aria-haspopup="false" aria-orientation="horizontal" tabindex="0" style="height: 70px; width: auto;">
+                                <div class="e-toolbar-items">
+                                    <div class="e-toolbar-item" aria-disabled="false" title="Day"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_0" tabindex="-1"
+                                            aria-label="Day" style="width: auto;"><span class="e-btn-icon e-icons e-day e-icon-left"></span><span
+                                                class="e-tbar-btn-text">Day</span></button></div>
+                                    <div class="e-toolbar-item" aria-disabled="false" title="Week"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_1" tabindex="-1"
+                                            aria-label="Week" style="width: auto;"><span class="e-btn-icon e-icons e-week e-icon-left"></span><span
+                                                class="e-tbar-btn-text">Week</span></button></div>
+                                    <div class="e-toolbar-item" aria-disabled="false" title="Month"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_2" tabindex="-1"
+                                            aria-label="Month" style="width: auto;"><span
+                                                class="e-btn-icon e-icons e-month e-icon-left"></span><span
+                                                class="e-tbar-btn-text">Month</span></button></div>
+                                    <div class="e-toolbar-item" aria-disabled="false" title="Year"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_3" tabindex="-1"
+                                            aria-label="Year" style="width: auto;"><span class="e-btn-icon e-icons e-month e-icon-left"></span><span
+                                                class="e-tbar-btn-text">Year</span></button></div>
+                                    <div class="e-toolbar-item" aria-disabled="false" title="Agenda"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_4" tabindex="-1"
+                                            aria-label="Agenda" style="width: auto;"><span
+                                                class="e-btn-icon e-icons e-agenda-date-range e-icon-left"></span><span
+                                                class="e-tbar-btn-text">Agenda</span></button></div>
+                                    <div class="e-toolbar-item" aria-disabled="false" title="New Event"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_5" tabindex="-1"
+                                            aria-label="New Event" style="width: auto;"><span
+                                                class="e-btn-icon e-icons e-plus e-icon-left"></span><span class="e-tbar-btn-text">New
+                                                Event</span></button></div>
+                                    <div class="e-toolbar-item e-separator" aria-disabled="false"></div>
+                                    <div class="e-toolbar-item" aria-disabled="false" title="Profile"><button
+                                            class="e-tbar-btn e-tbtn-txt e-control e-btn e-lib" type="button" id="e-tbr-btn_6" tabindex="-1"
+                                            aria-label="Profile" style="width: auto;" onclick="window.location.href='profile.html'"><span
+                                                class="e-btn-icon e-icons e-profile e-icon-left"></span><span
+                                                class="e-tbar-btn-text">Profile</span></button></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="overview-content">
+                        <div class="left-panel">
+                            <div class="overview-scheduler">
+                                <div id="scheduler"></div>
+                                <ul id="OverViewContextMenu"></ul>
+                            </div>
+                        </div>
+                        <div class="right-panel hide">
+                            <div class="control-panel e-css">
+                                <div class="col-row">
+                                    <div class="col-left">
+                                        <label style="line-height: 34px; margin: 0;">First Day of Week</label>
+                                    </div>
+                                    <div class="col-right">
+                                        <input type="text" id="weekFirstDay">
+                                    </div>
+                                </div>
+                                <div class="col-row">
+                                    <div class="col-left">
+                                        <label style="line-height: 34px; margin: 0;">Work week</label>
+                                    </div>
+                                    <div class="col-right">
+                                        <input type="text" id="workWeekDays">
+                                    </div>
+                                </div>
+                                <div class="col-row">
+                                    <div class="col-left">
+                                        <label style="line-height: 34px; margin: 0;">Resources</label>
+                                    </div>
+                                    <div class="col-right">
+                                        <input type="text" id="resources">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script id="header-template" type="text/x-template">
+        <div class="quick-info-header">
+            <div class="quick-info-header-content" style="${getHeaderStyles(data)}">
+                <div class="quick-info-title">${if (elementType == "cell")}Add Appointment${else}Appointment Details${/if}</div>
+                <div class="duration-text">${getHeaderDetails(data)}</div>
+            </div>
+        </div>
+    </script>
+    
+    <script id="content-template" type="text/x-template">
+        <div class="quick-info-content">
+            ${if (elementType == "cell")}
+            <div class="e-cell-content">
+                <div class="content-area">
+                    <input id="title" placeholder="Title" />
+                </div>
+                <div class="content-area">
+                    <input id="eventType" placeholder="Choose Type" />
+                </div>
+                <div class="content-area">
+                    <input id="notes" placeholder="Notes" />
+                </div>
+            </div>
+            ${else}
+            <div class="event-content">
+                <div class="meeting-type-wrap">
+                    <label>Subject</label>:
+                    <span>${Subject}</span>
+                </div>
+                <div class="meeting-subject-wrap">
+                    <label>Type</label>:
+                    <span>${getEventType(data)}</span>
+                </div>
+                <div class="notes-wrap">
+                    <label>Notes</label>:
+                    <span>${Description}</span>
+                </div>
+            </div>
+            ${/if}
+        </div>
+    </script>
+    
+    <script id="footer-template" type="text/x-template">
+        <div class="quick-info-footer">
+            ${if (elementType == "cell")}
+            <div class="cell-footer">
+                <button id="more-details">More Details</button>
+                <button id="add">Add</button>
+            </div>
+            ${else}
+            <div class="event-footer">
+                <button id="delete">Delete</button>
+                <button id="more-details">More Details</button>
+            </div>
+            ${/if}
+        </div>
+    </script>
+    
+    <script src="../views/Home/index.js"></script>
+</html>
